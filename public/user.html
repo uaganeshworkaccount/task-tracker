@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="stylesheet" type="text/css" href="./css/userpage.css">
+      <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css">
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=AR+One+Sans&family=Poppins:wght@200&display=swap" rel="stylesheet">
+      <title>User</title>
+      
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+      <script type = "text/JavaScript" src = " https://MomentJS.com/downloads/moment.js"></script>
+      <script src="./js/userscript.js"></script>
+   </head>
+   <body onload="displayTasks()">
+      <h2>User Dashboard </h2>
+      <div class="topnav">
+         <a id="currenttaskanchor" class="navstyle" onclick="displayTasks()">Current Tasks</a>
+         <a id="completedtaskanchor" class="navstyle" onclick="viewCompletedTasksUser()">Completed Tasks</a>
+         <!-- <a href="#about">About</a> -->
+      </div>
+      
+      <div id="useridentity">hii</div>
+      <button class="anchorbutton" onclick="logout()">Logout</button>
+      
+     
+      <!-- Table -->
+      <div class="tablecontainer" id="generateTable">    
+         
+         </tbody>
+         </table>
+      </div>
+      <div class="ordercancelpopup" id="confirmationPopup">
+         <div class="cancelpopup-content">
+            <input type="hidden" id="passidfordelete" value="test">
+            <p id="deleteconfirm">Are you sure you want to delete the Task?</p>
+            <button id="confirmCancel" onclick="deleteTask()"class="bts">Delete</button>
+            <button id="goBack" class="bts">Go Back</button>
+         </div>
+      </div>
+      <!-- NOtiFication to show task -->
+      <!-- <img id="nomess" src="./assets/images/nom.gif"> -->
+     <div class="shownotificationpopup" id="notificationPopup"></div>
+
+     <div id="blkpge">
+      <div id="popupchat" class="popupchat">
+        <h4 class="h4">Task Comments</h4>
+        <div class="close-button" onclick="closePopup()">X</div>
+        <div class="chat-box" id="chatBox"></div>
+        <div class="input-area">
+          <input type="hidden" id="hideidvalue" value="hi" />
+          <input type="hidden" id="lengthidvalue" value="hello" />
+          <input
+            type="text"
+            class="message-input"
+            id="messageInput"
+            placeholder="Type your message..."
+            onkeydown="enterPress(event)"
+          />
+          <button class="send-button" onclick="sendMessage()">Send</button>
+        </div>
+      </div>
+
+      <!-- <div class="notificationpopup-content" id="notificationpopupmessage">
+         <h4 id="regconfirm">Notification 🔔</h4>
+         <p id="">The Following Tasks Has Been Assigned To You!</p>
+         <p>Task 1 : Create Dashboard</p>
+         <button id="goNotify" class="bts">OK</button>
+       
+      </div> -->
+   </div>
+    <!-- testing popup <button onclick="notifyUser()">Check</button> -->
+
+    <!-- Update Task Popup -->
+      <div id="updatepopup" class="updatepopup">
+        <div class="updatepopup-content">
+           <span class="close" id="closePopupupdate">&times;</span>
+           <h2>Update Status</h2>
+           <!-- <form id="popupForm"> -->
+           <div id="errormessageupdate"></div>
+           <label for="currentstatus">Current Status:</label>
+           <select  name="priority" id="currentstatus" >
+            <option disabled value="Pending" >Pending</option>
+            <option value="On Progress">On Progress</option> 
+            <option value="Blockers Present">Blockers Present</option> 
+            <option value="Completed">Completed</option>
+             
+           </select>
+           <!-- <label for="commentsection">Comments:</label>
+           <input type="text" id="commentsection"> -->
+           
+           <input type="hidden" value="test" id="hiddenidvalueupdate">
+           <br>
+           <button onclick="updateStatus()">Update Status</button>
+           <!-- </form> -->
+        </div>
+     </div>
+     <script src="https://kit.fontawesome.com/d51c617086.js" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+   </body>
+</html>

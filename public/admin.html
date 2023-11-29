@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="stylesheet" type="text/css" href="./css/adminpage.css">
+      <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css">
+      <title>Admin</title>
+      <script src="./js/adminscript.js"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+      <script type = "text/JavaScript" src = " https://MomentJS.com/downloads/moment.js"></script>
+      <script src="./js/adminscript.js"></script>
+   </head>
+   <body onload="displayTasks()">
+      <h2>Admin Dashboard</h2>
+      <div class="topnav">
+         <a  onclick="invokePopup()">Create Task</a>
+         <a  id="currenttaskanchor" class="navstyle" onclick="displayTasks()">Current Tasks</a>
+         <a  id="cmpltetasknavigation" class="navstyle" onclick="viewCompletedTasksAllUsers()">Completed Tasks</a>
+         <a  id="searchtasknavigation" class="navstyle" onclick="searchTask()">Search Tasks</a>
+      </div>
+
+      <button class="anchorbutton" onclick="logout()">Logout</button>
+
+      <!-- Admin popup -->
+      <!-- Create Task Popup -->
+      <div id="popup" class="popup">
+         <div class="popup-content">
+            <span class="close" id="closePopup">&times;</span>
+            <h2>Create Task</h2>
+            <!-- <form id="popupForm"> -->
+            <div id="errormessage"></div>
+            <label for="tasktitle">Task Title:</label>
+            <input type="text" id="tasktitle" required>
+            <label for="taskdescription">Task Description:</label>
+            <input type="text" id="taskdescription" required>
+            <label for="duedate">Due Date</label>
+            <input type="date" id="duedate"  pattern="\d{2}-\d{2}-\d{4}" required></br>
+            <label for="prioritylevel">Priority Level:</label>
+            <select name="priority" id="priority" >
+               <option disabled selected value> Select Priority </option>
+               <option value="Low">Low</option>
+               <option value="Medium">Medium</option>
+               <option value="High">High</option>
+            </select>
+            <label for="assignedto">Assigned To:</label>
+            <span id="userlist">
+            </span>
+            <input type="hidden" value="test" id="hiddenidvalue">
+            <input type="hidden" value="length" id="lengthidvalue">
+            <br>
+            <button onclick="createTaskDetails()">Create Task</button>
+            <!-- </form> -->
+         </div>
+      </div>
+     
+      
+      <!-- Table -->
+      <div class="tablecontainer" id="generateTable">    
+         </tbody>
+         </table>
+      </div>
+
+        <!-- Search Table -->
+        <div class="tablecontainer" id="generateTablesearch">    
+      </tbody>
+      </table>
+      </div>
+
+ 
+     <!-- Delete Task Popup -->
+      <div class="ordercancelpopup" id="confirmationPopup">
+         <div class="cancelpopup-content">
+            <input type="hidden" id="passidfordelete" value="test">
+            <p id="deleteconfirm">Are you sure you want to delete the Task?</p>
+            <button id="confirmCancel" onclick="deleteTask()"class="bts">Delete</button>
+            <button id="goBack" class="bts">Go Back</button>
+         </div>
+      </div>
+
+    <!-- Update Task Popup -->
+      <div id="updatepopup" class="updatepopup">
+        <div class="updatepopup-content">
+           <span class="close" id="closePopupupdate">&times;</span>
+           <h2>Update Task Details</h2>
+           <!-- <form id="popupForm"> -->
+           <div id="errormessageupdate"></div>
+           <label for="tasktitle">Task Title:</label>
+           <input type="text" id="tasktitleupdate" required>
+           <label for="taskdescription">Task Description:</label>
+           <input type="text" id="taskdescriptionupdate" required>
+           <label for="duedate">Due Date</label>
+           <input type="date" id="duedateupdate"  pattern="\d{2}-\d{2}-\d{4}" required></br>
+           <label for="prioritylevel">Priority Level:</label>
+           <select name="priority" id="priorityupdate" >
+              <option disabled selected value> Select Priority </option>
+              <option value="Low">Low</option>
+              <option value="Medium">Medium</option>
+              <option value="High">High</option>
+           </select>
+           <label for="assignedto">Assigned To:</label>
+           <input type="text" id="assignedtoupdate" required readonly>
+           <input type="hidden" value="test" id="hiddenidvalueupdate">
+           <br>
+           <button onclick="updateTaskDetails()">Update Task</button>
+           <!-- </form> -->
+        </div>
+     </div>
+     
+     <div id="blkpge">
+      <div id="popupchat" class="popupchat">
+        <h4 class="h4">Task Comments</h4>
+        <div class="close-button" onclick="closePopup()">X</div>
+        <div class="chat-box" id="chatBox"></div>
+        <div class="input-area">
+          <input type="hidden" id="hideidvalue" value="hi" />
+          <input
+            type="text"
+            class="message-input"
+            id="messageInput"
+            placeholder="Type your message..."
+            onkeydown="enterPress(event)"
+          />
+          <button class="send-button" onclick="sendMessage()">Send</button>
+        </div>
+      </div>
+      <script src="https://kit.fontawesome.com/d51c617086.js" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+      <!-- <script src="./assets/notification.mp4"></script> -->
+   </body>
+</html>

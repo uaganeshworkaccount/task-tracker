@@ -1,0 +1,47 @@
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-image: linear-gradient(to right,#42275a,#734b6d);
+}
+
+.container {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  margin: 10% auto;
+  padding: 20px;
+
+}
+
+h1 {
+  color: #333;
+}
+
+p {
+  color: #666;
+}
+
+.buttons {
+  margin-top: 20px;
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border: none;
+  border-radius: 4px;
+  margin: 0 10px;
+}
+
+#loginBtn {
+  background-color: #155884;
+  color: #fff;
+}
+
+#registerBtn {
+  background-color: #1b6e3e;
+  color: #fff;
+}

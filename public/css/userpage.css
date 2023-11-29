@@ -1,0 +1,755 @@
+.topnav {
+  overflow: hidden;
+  background-color: #333;
+  border-radius: 12px;
+  border: none;
+}
+
+#notaskimage {
+  height: 528px;
+  position: relative;
+  left: 205px;
+}
+
+h2 {
+  font-family: "AR One Sans", sans-serif;
+  font-family: "Poppins", sans-serif;
+  position: relative;
+  left: 7px;
+}
+
+.clickedbutton {
+  background-color: #000000;
+  font-weight: bold;
+  letter-spacing: 0.2px;
+  color: white;
+}
+
+#greenalert {
+  color: rgb(2, 26, 2);
+  font-weight: bold;
+}
+
+#yellowalert {
+  color: rgb(96, 20, 48);
+  font-weight: bold;
+}
+
+#redalert {
+  color: rgb(105, 5, 5);
+  font-weight: bold;
+}
+
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+#useridentity {
+  position: absolute;
+  top: 15px;
+  color: #9c27b0;
+  font-weight: inherit;
+  letter-spacing: 2px;
+  left: 953px;
+}
+
+.topnav a:hover {
+  background-color: #000000;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+.topnav a.active {
+  background-color: #04aa6d;
+  color: white;
+}
+
+/* ------------------------------------------------------ */
+
+.popup {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+}
+
+.popup-content {
+  background-color: #fff;
+  padding: 20px;
+  width: 751px;
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  size: ledger;
+  top: 30px;
+  left: 293px;
+  position: absolute;
+}
+
+.close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+form {
+  margin-top: 20px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  position: absolute;
+  margin-top: 10px;
+}
+
+input {
+  width: 50%;
+  padding: 13px;
+  margin-bottom: 8px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+/* Update Popup */
+
+/* ------------------------------------------------------ */
+
+.updatepopup {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+}
+
+.updatepopup-content {
+  background-color: #fff;
+  padding: 20px;
+  width: 751px;
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  size: ledger;
+  top: 30px;
+  left: 293px;
+  position: absolute;
+}
+
+/* ------------------------------------------------------------------------------ */
+
+select#users {
+  display: block;
+  position: relative;
+  top: 6px;
+  height: 37px;
+  border: 1px solid #ccc;
+  width: 54%;
+  left: 174px;
+}
+
+#errormessage {
+  color: #f7413d;
+  font-weight: bold;
+  font-size: 20px;
+  margin-bottom: 10px;
+  letter-spacing: 0.5px;
+}
+
+select#priority {
+  display: block;
+  position: relative;
+  top: 6px;
+  height: 37px;
+  border: 1px solid #ccc;
+  width: 54%;
+  left: 174px;
+  margin-bottom: 16px;
+}
+
+select#currentstatus {
+  display: block;
+  position: relative;
+  top: 6px;
+  height: 37px;
+  border: 1px solid #ccc;
+  width: 54%;
+  left: 174px;
+  margin-bottom: 16px;
+}
+
+button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  /* z-index: -1; */
+}
+
+button:hover {
+  background-color: #0f1e2e;
+}
+
+/* Table CSS */
+h3 {
+  position: absolute;
+  left: 579px;
+  top: -25px;
+  padding: 15px;
+  /* background: #333333; */
+  text-align: center;
+  color: white;
+  border-radius: 8px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#logoutbutton {
+  position: absolute;
+  left: 1184px;
+  top: 12px;
+  border: none;
+  border-radius: 4px;
+  padding: 7px;
+  color: white;
+  background-color: #682d8c;
+}
+
+#hds {
+  background: #333333;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  /* border: 1px solid red; */
+  height: 55px;
+}
+
+/* Style the table */
+.modern-table {
+  width: 95%;
+  position: absolute;
+  border-collapse: collapse;
+  background-color: #fff;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  top: 178px;
+  left: 46px;
+}
+
+/* body {
+    background-image: linear-gradient(to right, #662d8c, #ED1E79);
+  } */
+
+button#btnn {
+  color: snow;
+  background: green;
+  border: none;
+  padding: 4px;
+  border-radius: 4px;
+}
+.modern-table th,
+.modern-table td {
+  padding: 3px;
+  text-align: center;
+}
+
+.modern-table th {
+  background-color: #333;
+  color: #fff;
+}
+
+.modern-table tbody tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.modern-table tr td:last-child {
+  width: 25%;
+  text-align: center;
+}
+
+.modern-table tr th:last-child {
+  width: 20%;
+  text-align: center;
+}
+
+.modern-table tr td:nth-last-child(2) {
+  width: 5%;
+  text-align: center;
+}
+.modern-table tr th:nth-last-child(2) {
+  width: 5%;
+}
+
+.modern-table tr td:first-child {
+  text-align: center;
+  width: 5%;
+}
+
+.modern-table tr th:first-child {
+  text-align: center;
+  width: 8%;
+}
+
+.modern-table tr td:nth-child(2) {
+  text-align: center;
+  width: 13%;
+}
+.modern-table tr th:nth-child(2) {
+  text-align: center;
+  width: 13%;
+}
+
+.modern-table tr td:nth-child(3) {
+  text-align: center;
+  width: 15%;
+}
+.modern-table tr th:nth-child(3) {
+  text-align: center;
+  width: 15%;
+}
+
+.modern-table tr td:nth-child(4) {
+  text-align: center;
+  width: 15%;
+}
+.modern-table tr th:nth-child(4) {
+  text-align: center;
+  width: 15%;
+}
+
+.modern-table tr td:nth-child(5) {
+  text-align: center;
+  width: 9%;
+}
+.modern-table tr th:nth-child(5) {
+  text-align: center;
+  width: 9%;
+}
+
+.tablecontainer {
+  /* position:relative; */
+  top: -5px;
+}
+
+/* completed table css */
+
+/* Style the table */
+.modern-table-completed {
+  width: 95%;
+  position: absolute;
+  border-collapse: collapse;
+  background-color: #fff;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  top: 178px;
+  left: 46px;
+}
+
+.modern-table-completed th,
+.modern-table-completed td {
+  padding: 3px;
+  text-align: center;
+}
+
+.modern-table-completed th {
+  background-color: #333;
+  color: #fff;
+}
+
+.modern-table-completed tbody tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.modern-table-completed tr td:last-child {
+  width: 25%;
+  text-align: center;
+}
+
+.modern-table-completed tr th:last-child {
+  width: 20%;
+  text-align: center;
+}
+
+.modern-table-completed tr td:nth-last-child(2) {
+  width: 5%;
+  text-align: center;
+}
+.modern-table-completed tr th:nth-last-child(2) {
+  width: 5%;
+}
+
+.modern-table-completed tr td:first-child {
+  text-align: center;
+  width: 5%;
+}
+
+.modern-table-completed tr th:first-child {
+  text-align: center;
+  width: 8%;
+}
+
+.modern-table-completed tr td:nth-child(2) {
+  text-align: center;
+  width: 13%;
+}
+.modern-table-completed tr th:nth-child(2) {
+  text-align: center;
+  width: 13%;
+}
+
+.modern-table-completed tr td:nth-child(3) {
+  text-align: center;
+  width: 15%;
+}
+.modern-table-completed tr th:nth-child(3) {
+  text-align: center;
+  width: 15%;
+}
+
+.modern-table-completed tr td:nth-child(4) {
+  text-align: center;
+  width: 15%;
+}
+.modern-table-completed tr th:nth-child(4) {
+  text-align: center;
+  width: 15%;
+}
+
+.modern-table-completed tr td:nth-child(7) {
+  text-align: center;
+  width: 15%;
+}
+.modern-table-completed tr th:nth-child(7) {
+  text-align: center;
+  width: 15%;
+}
+
+.modern-table-completed tr td:nth-child(8) {
+  text-align: center;
+  width: 15%;
+}
+.modern-table-completed tr th:nth-child(8) {
+  text-align: center;
+  width: 15%;
+}
+
+.modern-table-completed tr td:nth-child(6) {
+  text-align: center;
+  width: 15%;
+}
+.modern-table-completed tr th:nth-child() {
+  text-align: center;
+  width: 15%;
+}
+
+.tablecontainer {
+  /* position:relative; */
+  top: -5px;
+}
+
+/* Delete popup */
+.ordercancelpopup {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+  border-radius: 8px;
+  padding: 20px;
+  z-index: 5;
+}
+
+.ordercancelpopup .cancelpopup-content {
+  margin-bottom: 20px;
+}
+body {
+  font-family: "AR One Sans", sans-serif;
+}
+
+.bts {
+  /* padding: 10px 20px; */
+  margin: 10px;
+  border: none;
+  cursor: pointer;
+  position: relative;
+  margin: 19px;
+  top: 21px;
+}
+
+button#cancelOrderButton {
+  background-color: #50120d;
+  color: white;
+}
+
+button#confirmCancel {
+  background-color: #f44336;
+  color: white;
+  position: relative;
+  left: 49px;
+}
+
+.anchorbutton {
+  position: absolute;
+  left: 1127px;
+  top: 26px;
+}
+
+button#goBack {
+  background-color: #4caf50;
+  color: white;
+  position: relative;
+  left: 38px;
+}
+
+#deleteconfirm {
+  font-family: Arial, sans-serif;
+  text-align: center;
+}
+
+/* Popup For Notification */
+
+.shownotificationpopup {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  align-items: center;
+  justify-content: center;
+  z-index: 6;
+}
+
+img#bellicon {
+  position: relative;
+  top: 8px;
+}
+
+.btncommentedit {
+  background-color: #085608;
+  display: inline;
+}
+
+.notificationpopup-content {
+  display: block;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  box-shadow: 0px 0px 10px #9c27b0;
+  border-radius: 8px;
+  padding: 20px;
+  z-index: 5;
+  margin-bottom: 20px;
+}
+
+
+.bts {
+  /* padding: 10px 20px; */
+  margin: 10px;
+  border: none;
+  cursor: pointer;
+  position: relative;
+  margin: 19px;
+  top: 21px;
+}
+
+button#cancelOrderButton {
+  background-color: #50120d;
+  color: white;
+}
+
+button#confirmCancel {
+  background-color: #f44336;
+  color: white;
+  position: relative;
+  left: 49px;
+}
+
+button#goNotify {
+  color: #ffffff;
+  background-color: #673ab7;
+  font-weight: bold;
+  /* position: relative; */
+  margin-top: -8px;
+  margin-left: 0px;
+}
+
+button#goNotify:hover {
+  background-color: #3f2270;
+}
+
+.anchorbutton {
+  position: absolute;
+  left: 1127px;
+  top: 26px;
+}
+
+button#goBack {
+  background-color: #4caf50;
+  color: white;
+  position: relative;
+  left: 38px;
+}
+
+#regconfirm {
+  font-family: "AR One Sans", sans-serif;
+  text-align: center;
+  font-weight: bold;
+}
+
+#namedisplay {
+  color: #5d1669;
+}
+
+#messageconfirm {
+  font-family: "AR One Sans", sans-serif;
+  text-align: center;
+  font-weight: bold;
+}
+
+/* Popup for Chat Script */
+
+.popupchat {
+  display: block;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 10px;
+  padding: 0px;
+  padding-top: 12px;
+  border: none;
+  background-color: #333;
+  box-shadow: 0 4px 8px rgb(255 0 0 / 10%);
+  z-index: 1;
+}
+
+.chat-box {
+  height: 295px;
+  width: 352px;
+  background: white;
+  border-radius: -1px;
+  overflow-y: auto;
+  /* border: 1px solid #ccc; */
+  /* margin-bottom: 10px; */
+  padding: 12px;
+  margin-top: 3px;
+}
+
+.input-area {
+  display: flex;
+}
+
+.message-input {
+  flex: 1;
+  padding: 6px;
+  border: none;
+  border-radius: 4px;
+  position: relative;
+  top: 4px;
+  left: 4px;
+}
+
+input[type="text"]:focus {
+  border: 3px solid #e91414;
+  border: none;
+}
+
+.send-button {
+  padding: 8px;
+  background: #333;
+  cursor: pointer;
+  border: none;
+  color: white;
+  border-radius: 2px;
+}
+
+.send-button:hover {
+  background: rgb(0, 0, 0);
+}
+
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+  color: white;
+}
+
+.h4 {
+  display: inline;
+  color: white;
+  font-family: arial;
+  position: relative;
+  left: 5px;
+}
+
+#blkpge {
+  display: none;
+  /* border: 1px solid red; */
+  height: 100%;
+  width: 100%;
+  /* z-index: 10; */
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.stschange {
+  background-color: #0d3b37;
+}
+
+#nomess {
+  height: 289px;
+  width: 310px;
+  position: relative;
+  left: 10px;
+}
+
+.stbtnchange {
+  background-color: #333333;
+}
+
+#boldmessage{
+  color:green;
+  font-weight: bold;
+  
+}
+
+#boldmessageadmin{
+  color:rgb(116, 16, 16);
+  font-weight: bold;
+  
+}
+
+.chatmessagestye{
+
+  font-size: 17px;
+
+}
